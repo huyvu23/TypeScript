@@ -22,26 +22,27 @@ class SearchForm extends Component {
     this.props.onSearchForm(this.state.search_key);
   };
 
-  //
   render() {
     var search_key = this.state.search_key;
     return (
       <div className="row">
-        <div className="input-group">
-          <input
-            type="search"
-            className="form-control rounded"
-            id="input-search-department"
-            placeholder="Search by Email, FullName, Department"
-            aria-label="Search"
-            aria-describedby="search-addon"
-            name="search_key"
-            value={search_key}
-            onChange={this.onChange}
-          ></input>
-          <button type="button" className="btn btn-outline-primary" onClick={this.handleSeacrch}>
-            search
-          </button>
+        <div className="col-xs-offset-3 col-xs-9 col-sm-9 col-md-9 col-lg-9">
+          <div className="input-group">
+            <input
+              type="search"
+              className="form-control rounded"
+              id="input-search-department"
+              placeholder="Search by Email, FullName, Department"
+              aria-label="Search"
+              aria-describedby="search-addon"
+              name="search_key"
+              value={search_key}
+              onChange={this.onChange}
+            ></input>
+            <button type="button" className="btn btn-outline-primary" onClick={this.handleSeacrch}>
+              search
+            </button>
+          </div>
         </div>
       </div>
     );

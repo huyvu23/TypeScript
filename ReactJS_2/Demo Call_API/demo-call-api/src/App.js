@@ -141,8 +141,6 @@ class App extends Component {
     let listAccounts = this.state.listAccounts;
     let indexAccountUpdate = listAccounts.findIndex((account) => account.ID === id);
     if (indexAccountUpdate !== -1) {
-      // let isShowInputForm = this.state.isShowInputForm;
-      // isShowInputForm = true;
       this.setState({
         isShowInputForm: true,
       });
@@ -156,9 +154,11 @@ class App extends Component {
       });
     }
   };
+
   // Hàm xử lý update dữ liệu vào list
   update_Account_Button = (account) => {
-    // console.log("Dữ liệu account update là: ", account);
+    console.log("Dữ liệu account update là: ", account);
+
     // let listAccounts = this.state.listAccounts;
     // let indexAccount_Update = listAccounts.findIndex((account1) => account1.ID === account.ID);
     // if (indexAccount_Update !== -1) {
@@ -170,20 +170,23 @@ class App extends Component {
     // }
 
     const baseURL = `http://localhost:8080`;
-    const body = {
-      fullname: account.Fullname, // data.Fullname lấy theo state của InputForm
-      departmentId: account.Department, // data.Department giá trị này được truyền theo value của thẻ select, ở đây đã trả ra depID
-      positionId: account.Position, // data.Position giá trị này được truyền theo value của thẻ select, ở đây đã trả ra posID
+    let body = {
+      fullname: account.Fullname, // account.Fullname lấy theo state của InputForm
+      departmentId: account.Department, // account.Department giá trị này được truyền theo value của thẻ select, ở đây đã trả ra depID
+      positionId: account.Position, // account.Position giá trị này được truyền theo value của thẻ select, ở đây đã trả ra posID
     };
+
     // lấy ra id account cần update
-    let id = account.id;
+    let id = account.ID;
+
     Axios.put(`${baseURL}/api/v1/accounts/${id}`, body)
       .then((response) => {
-        // console.log(response);
+        console.log(response);
         this.getListAccount(); // gọi lại hàm này để cập nhật dữ liệu sau khi thêm mới thành công
       })
       .catch((error) => console.log(error));
   };
+
   // Xử lý search dữ liệu
   onSearchForm = (data) => {
     console.log("Dữ liệu search từ APP: ", data);
@@ -192,14 +195,18 @@ class App extends Component {
     });
   };
   render() {
-    let accountUpdate = this.state.accountUpdate;
     let isShowInputForm = this.state.isShowInputForm;
     let inputForm_Element;
     let listAccounts = this.state.listAccounts;
     //  <InputForm />;
     if (isShowInputForm) {
       inputForm_Element = (
-        <InputForm onshowForm={this.onshowForm} onSaveForm={this.onSaveForm} accountUpdate={accountUpdate} update_Account_Button={this.update_Account_Button} />
+        <InputForm
+          onshowForm={this.onshowForm}
+          onSaveForm={this.onSaveForm}
+          accountUpdate={this.state.accountUpdate}
+          update_Account_Button={this.update_Account_Button}
+        />
       );
     } else {
       inputForm_Element = "";

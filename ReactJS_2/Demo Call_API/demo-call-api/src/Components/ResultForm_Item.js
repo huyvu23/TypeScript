@@ -3,7 +3,6 @@ import React, { Component } from "react";
 class ResultFormItem extends Component {
   constructor(props) {
     super(props);
-    // this.Cretate_Date = "24/07/2021";
   }
   // Hàm xử lý khi click vào nút delete
   onDeleteForm = (id) => {
@@ -13,6 +12,7 @@ class ResultFormItem extends Component {
   onDUpdateForm = (id) => {
     this.props.onDUpdateForm(id);
   };
+
   render() {
     const { listAccounts } = this.props;
     const rows = listAccounts.map((account, index) => {

@@ -28,14 +28,6 @@ class InputForm extends Component {
   };
 
   handleSubmit = (event) => {
-    // alert("ID bạn vừa nhập là: " + this.state.ID);
-    // alert("Email bạn vừa nhập là: " + this.state.Email);
-    // alert("Usernamebạn vừa nhập là: " + this.state.Username);
-    // alert("Fullname bạn vừa nhập là: " + this.state.Fullname);
-    // alert("Department bạn vừa nhập là: " + this.state.Department);
-    // alert("Position bạn vừa nhập là: " + this.state.Position);
-    // alert("Cretate_Date bạn vừa nhập là: " + this.state.Cretate_Date);
-
     // chuyển đổi tên Department ra ID
     let listDep = this.state.ListDepartment;
     let depName = this.state.Department;
