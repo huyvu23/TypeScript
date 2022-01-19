@@ -213,12 +213,12 @@ class App extends Component {
         // Sử dụng hàm includes để so sánh chuỗi, if chuỗi cha bao gồm chuỗi con sẽ trả về true, https://www.w3schools.com/jsref/jsref_includes.asp
         if (
           listAccounts[index].ID.toLowerCase().includes(search_key.toLowerCase()) ||
-          listAccounts[index].Email.toLowerCase().includes(search_key.toLowerCase()) ||
-          listAccounts[index].Username.toLowerCase().includes(search_key.toLowerCase()) ||
-          listAccounts[index].Fullname.toLowerCase().includes(search_key.toLowerCase()) ||
-          listAccounts[index].Department.toLowerCase().includes(search_key.toLowerCase()) ||
-          listAccounts[index].Position.toLowerCase().includes(search_key.toLowerCase()) ||
-          listAccounts[index].Cretate_Date.toLowerCase().includes(search_key.toLowerCase())
+          listAccounts[index].Email.toLowerCase().includes(search_key.toLowerCase())
+          // listAccounts[index].Username.toLowerCase().includes(search_key.toLowerCase()) ||
+          // listAccounts[index].Fullname.toLowerCase().includes(search_key.toLowerCase()) ||
+          // listAccounts[index].Department.toLowerCase().includes(search_key.toLowerCase()) ||
+          // listAccounts[index].Position.toLowerCase().includes(search_key.toLowerCase()) ||
+          // listAccounts[index].Cretate_Date.toLowerCase().includes(search_key.toLowerCase())
         ) {
           listAccounts_filter.push(listAccounts[index]); // Lấy các phần tử thỏa mãn đk search_key lưu vào listAccounts_filter trung gian
         }

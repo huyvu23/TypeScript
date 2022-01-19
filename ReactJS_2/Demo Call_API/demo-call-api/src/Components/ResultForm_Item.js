@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class ResultFormItem extends Component {
   constructor(props) {
     super(props);
-    this.Cretate_Date = "24/07/2021";
+    // this.Cretate_Date = "24/07/2021";
   }
   // Hàm xử lý khi click vào nút delete
   onDeleteForm = (id) => {
@@ -26,7 +26,7 @@ class ResultFormItem extends Component {
             <td>{account.Fullname}</td>
             <td>{account.Department}</td>
             <td>{account.Position}</td>
-            <td>{this.Cretate_Date}</td>
+            <td>{account.CreateDate}</td>
             <td>
               <button className="btn btn-warning" onClick={() => this.onDUpdateForm(account.ID)}>
                 Edit

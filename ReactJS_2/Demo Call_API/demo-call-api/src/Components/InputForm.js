@@ -109,6 +109,7 @@ class InputForm extends Component {
     //   .catch((error) => {
     //     console.log(error);
     //   });
+
     try {
       let response = await DepartmentApi.getAllDepartments();
       this.setState({
@@ -175,7 +176,7 @@ class InputForm extends Component {
     let ListDepartment = this.state.ListDepartment;
     departmentItem = ListDepartment.map((department, index) => <option>{department.name}</option>);
 
-    //render ra listDeapertment
+    //render ra listPosition
     let PositionItem = "";
     let ListPosition = this.state.ListPosition;
     PositionItem = ListPosition.map((position, index) => <option>{position.name}</option>);
