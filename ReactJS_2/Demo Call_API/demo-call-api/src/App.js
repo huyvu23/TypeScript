@@ -158,7 +158,7 @@ class App extends Component {
 
   // Hàm xử lý update dữ liệu vào list
   update_Account_Button = (account) => {
-    console.log("Dữ liệu account update là: ", account);
+    // console.log("Dữ liệu account update là: ", account);
 
     // let listAccounts = this.state.listAccounts;
     // let indexAccount_Update = listAccounts.findIndex((account1) => account1.ID === account.ID);
@@ -169,6 +169,7 @@ class App extends Component {
     //   });
     //   localStorage.setItem("listAccounts", JSON.stringify(listAccounts)); // Lưu lại dữ liệu xuống local Storage
     // }
+
     // chuyển đổi tên Department ra ID
     let listDep = account.ListDepartment;
     let depName = account.Department;
@@ -197,7 +198,6 @@ class App extends Component {
       positionId: posID, // account.Position giá trị này được truyền theo value của thẻ select, ở đây đã trả ra posID
     };
 
-    console.log(body);
     // lấy ra id account cần update
     let id = account.ID;
 
@@ -216,6 +216,7 @@ class App extends Component {
       search_key: data,
     });
   };
+
   render() {
     let isShowInputForm = this.state.isShowInputForm;
     let inputForm_Element;
@@ -233,6 +234,7 @@ class App extends Component {
     } else {
       inputForm_Element = "";
     }
+
     // Xử lý render cho search
     let search_key = this.state.search_key;
 
