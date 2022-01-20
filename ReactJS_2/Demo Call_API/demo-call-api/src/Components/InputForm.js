@@ -138,6 +138,7 @@ class InputForm extends Component {
 
   // Hàm xử lý sự kiện khi click vào nút Update
   handleUpdate = () => {
+    // truyền những thứ thay đổi lên app đẻ update
     this.props.update_Account_Button(this.state);
   };
   //

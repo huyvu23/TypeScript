@@ -135,6 +135,7 @@ class App extends Component {
       })
       .catch((error) => console.log(error));
   };
+
   // Xử lý update dữ liệu
   onDUpdateForm = (id) => {
     console.log("ID của Account cần update: ", id);
@@ -168,20 +169,42 @@ class App extends Component {
     //   });
     //   localStorage.setItem("listAccounts", JSON.stringify(listAccounts)); // Lưu lại dữ liệu xuống local Storage
     // }
+    // chuyển đổi tên Department ra ID
+    let listDep = account.ListDepartment;
+    let depName = account.Department;
+    let depID;
+    listDep.forEach((element) => {
+      if (element.name === depName) {
+        depID = element.id;
+      }
+    });
+
+    // chuyển đổi Position ra ID
+
+    let lisPos = account.ListPosition;
+    let posName = account.Position;
+    let posID;
+    lisPos.forEach((element) => {
+      if (element.name === posName) {
+        posID = element.id;
+      }
+    });
 
     const baseURL = `http://localhost:8080`;
     let body = {
       fullname: account.Fullname, // account.Fullname lấy theo state của InputForm
-      departmentId: account.Department, // account.Department giá trị này được truyền theo value của thẻ select, ở đây đã trả ra depID
-      positionId: account.Position, // account.Position giá trị này được truyền theo value của thẻ select, ở đây đã trả ra posID
+      departmentId: depID, // account.Department giá trị này được truyền theo value của thẻ select, ở đây đã trả ra depID
+      positionId: posID, // account.Position giá trị này được truyền theo value của thẻ select, ở đây đã trả ra posID
     };
 
+    console.log(body);
     // lấy ra id account cần update
     let id = account.ID;
+    let header = { contentType: "application/json", accept: "*/" };
 
     Axios.put(`${baseURL}/api/v1/accounts/${id}`, body)
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         this.getListAccount(); // gọi lại hàm này để cập nhật dữ liệu sau khi thêm mới thành công
       })
       .catch((error) => console.log(error));
