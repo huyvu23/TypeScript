@@ -200,7 +200,6 @@ class App extends Component {
     console.log(body);
     // lấy ra id account cần update
     let id = account.ID;
-    let header = { contentType: "application/json", accept: "*/" };
 
     Axios.put(`${baseURL}/api/v1/accounts/${id}`, body)
       .then((response) => {
