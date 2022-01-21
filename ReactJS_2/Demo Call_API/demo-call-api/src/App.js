@@ -83,6 +83,7 @@ class App extends Component {
       isShowInputForm: !this.state.isShowInputForm,
     });
   };
+
   onshowForm = () => {
     this.setState({
       isShowInputForm: !this.state.isShowInputForm,
@@ -181,7 +182,6 @@ class App extends Component {
     });
 
     // chuyển đổi Position ra ID
-
     let lisPos = account.ListPosition;
     let posName = account.Position;
     let posID;
