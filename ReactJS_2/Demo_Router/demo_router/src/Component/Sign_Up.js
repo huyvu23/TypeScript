@@ -32,7 +32,7 @@ class Sign_Up extends Component {
   };
 
   handleSubmit = (event) => {
-    // name và value lấy theo các thuộc tính ở input\
+    // name và value lấy theo các thuộc tính ở input
     let user = {
       Full_Name: this.state.Full_Name,
       Email: this.state.Email,
@@ -46,6 +46,7 @@ class Sign_Up extends Component {
   render() {
     return (
       <div className="container">
+        {/* Hỏi trước khi chuyển trang thì thêm Prompt */}
         <Prompt when={this.state.isBlocking} message="Bạn có chắc chắn muốn thoát không ?" />
         <div className="row">
           <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">

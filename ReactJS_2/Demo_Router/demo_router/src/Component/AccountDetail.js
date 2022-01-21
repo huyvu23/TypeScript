@@ -67,6 +67,7 @@ class AccountDetail extends Component {
     console.log("Gia trị match nhận được :", match);
     // lấy ra id truyền xuống từ Account Management
     let id = this.props.match.params.ID;
+
     // In thông tin chi tiết của Account.
     const row_Account = this.state.listAccounts.map((account, index) => {
       // check xem accountID nào  bằng id truyền xuống thì in ra
@@ -85,7 +86,7 @@ class AccountDetail extends Component {
         );
       }
     });
-    // ==================================================================================== row_Account={row_Account}= ...this.props
+    // ================================================================================== row_Account={row_Account}= ...this.props
     return <AccountDetailItemWithLoading isLoading={this.state.listAccounts.length === 0} row_Account={row_Account} />;
     // <AccountDetailItem row_Account={row_Account} />;
   }

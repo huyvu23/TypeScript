@@ -12,7 +12,7 @@ import AccountDetail from "./Component/AccountDetail";
 function App() {
   return (
     <div className="App">
-      <nav className="navbar navbar-inverse" style={{ backgroundColor: "white", color: "black" }}>
+      <nav className="navbar navbar-inverse" style={{ backgroundColor: "black", color: "white" }}>
         <div className="container-fluid">
           <ul className="nav navbar-nav">
             <li>
@@ -50,6 +50,7 @@ function App() {
         </div>
       </nav>
       {/* End Menu */}
+
       {/* Khái báo đoạn Switch của router như bên dưới. */}
       <Switch>
         <Route path="/" component={Home} exact />
@@ -60,6 +61,7 @@ function App() {
         {/*đặt tên --- định nghĩa component chuyển đến  */}
         <Route path="/Sign_Up" component={Sign_Up} />
         <Route path="/AccountDetail/:ID" component={AccountDetail} />
+        {/* nếu không có đường dẫn nào đúng sẽ chui vào component error */}
         <Route component={Error} />
       </Switch>
     </div>
