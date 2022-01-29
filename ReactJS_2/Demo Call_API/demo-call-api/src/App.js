@@ -220,7 +220,7 @@ class App extends Component {
   render() {
     let isShowInputForm = this.state.isShowInputForm;
     let inputForm_Element;
-    let listAccounts = this.state.listAccounts;
+
     //  <InputForm />;
     if (isShowInputForm) {
       inputForm_Element = (
@@ -265,7 +265,7 @@ class App extends Component {
           {/* ô search dữ liệu */}
           <SearchForm onSearchForm={this.onSearchForm} />
           {/*  */}
-          <ResultForm listAccounts={listAccounts} onDeleteForm={this.onDeleteForm} onDUpdateForm={this.onDUpdateForm} />
+          <ResultForm listAccounts={this.state.listAccounts} onDeleteForm={this.onDeleteForm} onDUpdateForm={this.onDUpdateForm} />
         </div>
       </div>
     );
