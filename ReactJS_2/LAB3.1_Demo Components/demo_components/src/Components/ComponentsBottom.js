@@ -11,7 +11,6 @@ function ComponentsBottom(props) {
             </div>
             <div class="panel-body">
               <textarea name="" id="input" class="form-control" rows="3" required="required">
-                {/* Hello Vti */}
                 {/* Lấy dữ liệu từ cha xuống */}
                 {props.messgage}
               </textarea>
