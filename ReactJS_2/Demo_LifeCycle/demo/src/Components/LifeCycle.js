@@ -14,9 +14,9 @@ class LifeCycle extends Component {
   // Khai báo state
   changeState = () => {
     this.setState({
-      message: "Hello huy",
+      message: "Hello Huy",
     });
-    console.log("Bước 1 : Thực hiện thay đổi state sau khi nhấn change State");
+    console.log("Pha Updating ---- Bước 1 : Thực hiện thay đổi state sau khi nhấn change State");
   };
 
   render() {
@@ -38,8 +38,8 @@ class LifeCycle extends Component {
   }
   shouldComponentUpdate(newProps, newState) {
     console.log(newProps);
-    console.log(newState); // message : Hello Huy
-    console.log("Bước 2 : Gọi đến componentDidUpdate");
+    console.log(newState); // State mới : Hello Huy
+    console.log("Pha Updating --- Bước 2 : Gọi đến shouldComponentUpdate");
     // sẽ phải return ra true hoặc phone
     // nếu là true : return đến componentDidUpdate
     // nếu là false : dừng lại
@@ -52,7 +52,7 @@ class LifeCycle extends Component {
   }
   componentDidUpdate(prevProps, prevState) {
     console.log(prevProps);
-    console.log(prevState); // message : Hello VTI
+    console.log(prevState); // State trước khi bị thay đổi : Hello VTI
     console.log("Bước 4:gọi đến componentDidUpdate");
   }
 

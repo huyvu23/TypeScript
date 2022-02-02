@@ -10,7 +10,7 @@ class App extends Component {
   }
 
   deleteComponent = () => {
-    this.setState({ show: false });
+    this.setState({ show: !this.state.show });
   };
   render() {
     let ComponentLifeCycle = "";
