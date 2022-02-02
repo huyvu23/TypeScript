@@ -17,6 +17,7 @@ class App extends Component {
   };
 
   render() {
+    let data2 = this.state.dataFromTop; // Khai báo biến data lấy dữ liệu state của component
     return (
       <div className="App">
         {/*  state : chỉ trong cùng component */}
@@ -24,7 +25,7 @@ class App extends Component {
         {/* Đây là props */}
         {/* =============================== truyền hàm callBack thông qua hàm getData */}
         {/* <ComponentTop headingTopPanel="Top" getData={this.getDataFromComponentTop} data="Dữ liệu từ App" /> */}
-        <dataConText.Provider value={"data"}>
+        <dataConText.Provider value={data2}>
           {/* cho dữ liệu vào 1 cái kho  */}
           <ComponentTop headingTopPanel="Top" getData={this.getDataFromComponentTop} data="Dữ liệu từ App" />
         </dataConText.Provider>
