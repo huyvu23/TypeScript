@@ -14,7 +14,7 @@ class ResultFormItem extends Component {
   };
 
   render() {
-    const { listAccounts } = this.props;
+    const listAccounts = this.props.listAccounts;
     const rows = listAccounts.map((account, index) => {
       return (
         <React.Fragment>
