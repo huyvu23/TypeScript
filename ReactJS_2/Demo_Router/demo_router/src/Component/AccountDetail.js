@@ -63,6 +63,7 @@ class AccountDetail extends Component {
     // }
     let AccountDetailItemWithLoading = WithLoading(AccountDetailItem);
 
+    // match : chứa param truyền xuống khi người dùng ấn vào
     let match = this.props.match;
     console.log("Gia trị match nhận được :", match);
     // lấy ra id truyền xuống từ Account Management

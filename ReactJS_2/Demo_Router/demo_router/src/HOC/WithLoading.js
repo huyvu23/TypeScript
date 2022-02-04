@@ -11,7 +11,7 @@ function WithLoading(WrapperComponent) {
           </div>
         );
       } else {
-        // ...this.props là : lấy lại các props truyền đi của component đó
+        // ...this.props là : truyền theo tất cả các props của WrapperComponent xuống tầng bên dưới
         return <WrapperComponent {...this.props} />;
       }
     }
