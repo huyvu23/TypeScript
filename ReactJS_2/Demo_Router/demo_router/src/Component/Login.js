@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { Prompt, Redirect } from "react-router-dom";
 
 class Login extends Component {
   constructor(props) {
@@ -9,14 +9,23 @@ class Login extends Component {
       Email: "",
       Password: "",
       isRedirect: false,
+      isBlocking: false,
     };
   }
 
   handleChange = (event) => {
     let name = event.target.name;
     let value = event.target.value;
+    let length = event.target.value.length; // kiểm tra các trường xem có dữ liệu hay không
+    let isBlocking;
+    if (length > 0) {
+      isBlocking = true;
+    } else {
+      isBlocking = false;
+    }
     this.setState({
       [name]: value,
+      isBlocking: isBlocking,
     });
   };
 
@@ -53,6 +62,9 @@ class Login extends Component {
 
     return (
       <div className="container" style={{ width: "70%" }}>
+        {/* Hỏi trước khi chuyển trang thì thêm Prompt */}
+        <Prompt when={this.state.isBlocking} message="Bạn có chắc chắn muốn thoát không ?" />
+
         <div className="row">
           <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <br />
