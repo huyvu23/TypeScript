@@ -84,6 +84,7 @@ class App extends Component {
     });
   };
 
+  // nút close
   onshowForm = () => {
     this.setState({
       isShowInputForm: !this.state.isShowInputForm,
