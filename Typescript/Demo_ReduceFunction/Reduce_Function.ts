@@ -12,8 +12,5 @@ numArray.forEach((element) => {
 //  currentIndex : số phần tử hiện tại
 
 // 0 là giá trị tích lũy ban đầu
-let total_reduce = numArray.reduce(
-  (accumulator, currentValue) => accumulator + currentValue,
-  0
-);
+let total_reduce = numArray.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 console.log(total_reduce);
