@@ -45,7 +45,6 @@ Call_API_Email()
 })
     .then(function (message) {
     console.log(message);
-})
-    .catch(function (error) {
+})["catch"](function (error) {
     console.log(error);
 });
