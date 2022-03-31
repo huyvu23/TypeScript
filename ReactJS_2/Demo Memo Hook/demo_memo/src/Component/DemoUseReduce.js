@@ -19,7 +19,7 @@ function DemoUseReduce(props) {
   };
   // khai báo state để lưu kết quả
   const [Data, dispatch] = useReducer(reducer, 0); // cấu trức khai báo useReducer
-
+  // Khai báo action
   let Increase_1 = {
     type: "Increase",
     value: 1,
@@ -48,30 +48,6 @@ function DemoUseReduce(props) {
   let reset = {
     type: "Reset",
   };
-  //
-  //   let handleIncrease_1 = () => {
-  //     setData(Data + 1);
-  //   };
-
-  //   let handleDecrease_1 = () => {
-  //     setData(Data - 1);
-  //   };
-
-  //   let handleIncrease_2 = () => {
-  //     setData(Data + 2);
-  //   };
-
-  //   let handleDecrease_2 = () => {
-  //     setData(Data - 2);
-  //   };
-
-  //   let handleX_2 = () => {
-  //     setData(Data * Data);
-  //   };
-
-  //   let Reset = () => {
-  //     setData(0);
-  //   };
 
   return (
     <div className="container">

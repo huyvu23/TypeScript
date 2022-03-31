@@ -1,10 +1,10 @@
 import "./App.css";
-import DemoUseReduce from "./Component/DemoUseReduce";
+import DemoUseMemo from "./Component/DemoUseMemo";
 
 function App() {
   return (
     <div className="App">
-      <DemoUseReduce />
+      <DemoUseMemo />
     </div>
   );
 }

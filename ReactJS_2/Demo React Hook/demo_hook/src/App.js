@@ -1,22 +1,20 @@
-import React, { Component } from "react";
-// import Demo2 from "./Component/Demo2";
+import React from "react";
+// import Content from "./Component/Content";
+// import TimerEffect from "./Component/TimerEffect";
+// import EffectImage from "./Component/EffectImage";
+import Layout from "./Component/Layout";
+import { useState } from "react";
 import "./App.css";
-// import Demo1 from "./Component/Demo1";
-import GrandParentComponent from "./Context/GrandParentComponent";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <br />
-        <br />
-        <GrandParentComponent />
+function App() {
+  const [show, setShow] = useState(false);
 
-        <br />
-        <br />
-      </div>
-    );
-  }
+  return (
+    <div className="App" style={{ padding: 20 }}>
+      <button onClick={() => setShow(!show)}>Show</button>
+      {show && <Layout />}
+    </div>
+  );
 }
 
 export default App;

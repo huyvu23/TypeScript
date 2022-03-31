@@ -62,7 +62,6 @@ class InputForm extends Component {
     event.preventDefault();
   };
 
-  //=========================================================================
   onShowForm = () => {
     this.props.onshowForm();
   };
