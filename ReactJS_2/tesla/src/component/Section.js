@@ -15,6 +15,7 @@ function Section({ title, description, leftBtnText, rightBtnText, backgroundImg 
         <Fade bottom>
           <ButtonGroup>
             <LeftButton>{leftBtnText}</LeftButton>
+            {/* Nếu có right button thì sẽ hiển thị */}
             {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
           </ButtonGroup>
         </Fade>
