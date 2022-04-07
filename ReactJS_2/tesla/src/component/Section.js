@@ -37,7 +37,6 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  // Căn giữa các căn cho tất cả các mục của phần tử <div>
   align-items: center;
   background-image: ${(props) => `url("/images/${props.bgImage}")`};
 `;
