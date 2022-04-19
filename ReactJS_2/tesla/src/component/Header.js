@@ -36,10 +36,10 @@ function Header() {
       <BurgerNav show={burgerStatus}>
         <CloseWrapper
           onClick={() => {
-            setBurgerStatus(false);
+            setBurgerStatus(!burgerStatus);
           }}
         >
-          <CustomClose></CustomClose>
+          <CustomClose />
         </CloseWrapper>
         <li>
           <a href="">Existing Inventory</a>
