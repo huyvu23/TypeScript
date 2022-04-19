@@ -1,4 +1,4 @@
-import * as types from "../Contains/ActionTypes";
+import * as types from "../Contains/constants";
 
 let initialState = {
   isShowInputForm: false,
@@ -6,11 +6,9 @@ let initialState = {
 
 let Reducer = (state = initialState, action) => {
   if (action.type === types.show_input) {
-    // lấy lại trạng thái State : isShowInputForm
-    let isShowInputForm = state.isShowInputForm;
     return {
       ...state,
-      isShowInputForm: !isShowInputForm,
+      isShowInputForm: !state.isShowInputForm,
     };
   } else {
     return state;

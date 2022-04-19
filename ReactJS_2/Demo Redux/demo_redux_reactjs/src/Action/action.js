@@ -1,4 +1,4 @@
-import * as types from "../Contains/ActionTypes";
+import * as types from "../Contains/constants";
 
 // nơi định nghĩa ra các Acction
 export const ShowHideForm = () => {

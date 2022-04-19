@@ -1,4 +1,4 @@
-import * as types from "../Contains/ActionTypes";
+import * as types from "../Contains/constants";
 
 let initialState = {
   listAccount: [],
