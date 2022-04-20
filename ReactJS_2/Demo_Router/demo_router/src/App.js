@@ -1,5 +1,5 @@
 import "./App.css";
-import { Switch, Route, Link, NavLink } from "react-router-dom";
+import { Switch, Route, NavLink } from "react-router-dom";
 import Home from "./Component/Home";
 import About from "./Component/About";
 import AccountManagement from "./Component/AccountManagement";
@@ -58,10 +58,8 @@ function App() {
         <Route path="/AccountManagement" component={AccountManagement} />
         <Route path="/DepartmentManagement" component={DepartmentManagement} />
         <Route path="/Login" component={Login} />
-        {/*đặt tên --- định nghĩa component chuyển đến  */}
         <Route path="/Sign_Up" component={Sign_Up} />
         <Route path="/AccountDetail/:ID" component={AccountDetail} />
-        {/* nếu không có đường dẫn nào đúng sẽ chui vào component error */}
         <Route component={Error} />
       </Switch>
     </div>
