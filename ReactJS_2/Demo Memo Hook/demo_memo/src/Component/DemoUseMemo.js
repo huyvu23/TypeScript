@@ -23,7 +23,7 @@ function DemoUseMemo(props) {
     return c_num - d_num;
   };
   // Khai báo useMemo
-  // ===========================function ,[2 state]
+  // ===========================function ,list dependency
   let sum_Memo = useMemo(() => sum(a, b), [a, b]);
   let minus_Memo = useMemo(() => minus(c, d), [c, d]);
 
