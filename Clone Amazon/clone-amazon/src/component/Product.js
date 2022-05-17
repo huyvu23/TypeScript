@@ -4,7 +4,7 @@ import { db } from "../firebase";
 
 function Product({ title, price, rating, image, id }) {
   const addToCart = () => {
-    const cartItem = db.collection("cartItems").doc(id); // ! Tạo 1 sản phẩm mới từ product
+    const cartItem = db.collection("cartItems").doc(id);
     cartItem.get().then((doc) => {
       // ! Kiểm tra trong giỏ hàng đã có sản phẩm này chưa,nếu có rồi thì cần cập nhật số lượng
       if (doc.exists) {
