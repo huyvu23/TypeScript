@@ -10,7 +10,7 @@ import { useState, useEffect, useLayoutEffect } from "react";
 // useLayoutEffect
 // 1.Cập nhật lại state
 // 2.Cập nhật lại DOM
-// 3.Gọi cleanup nếu dép thay đổi(sync)
+// 3.Gọi cleanup nếu deps thay đổi(sync)
 // 4.gọi useEffect callback(sync)
 // 5.Render lại UI
 
