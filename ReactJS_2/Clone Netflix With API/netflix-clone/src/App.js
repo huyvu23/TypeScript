@@ -1,21 +1,42 @@
 import "./App.css";
-import Row from "./Components/Row";
-import requests from "./requests";
-import Banner from "./Components/Banner";
-import Nav from "./Components/Nav";
+import HomeScreen from "./Components/HomeScreen";
+import ProfileScreen from "./Components/ProfileScreen";
+import Login from "./Components/LoginScreen";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { auth } from "./firebase";
+import { useDispatch, useSelector } from "react-redux";
+import { logout, login, selectUser } from "./features/userSlice";
 function App() {
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((userAuth) => {
+      if (userAuth) {
+        dispatch(
+          login({
+            uid: userAuth.uiu,
+            email: userAuth.email,
+          }),
+        );
+      } else {
+        dispatch(logout());
+      }
+    });
+    return unsubscribe;
+  }, [dispatch]); // eslint-disable-line
   return (
     <div className="App">
-      <Nav />
-      <Banner />
-      <Row title="NETFLIX ORIGINALS" fetchURL={requests.fetchNetflixOriginals} isLargeRow={true}></Row>
-      <Row title="Trending Now" fetchURL={requests.fetchTrending}></Row>
-      <Row title="Top Rate" fetchURL={requests.fetchTopRated}></Row>
-      <Row title="Action Movies" fetchURL={requests.fetchActionMovies}></Row>
-      <Row title="Comedy Movies" fetchURL={requests.fetchComedyMovies}></Row>
-      <Row title="Horror" fetchURL={requests.fetchHorrorMovies}></Row>
-      <Row title="Romance Movies" fetchURL={requests.fetchRomanceMovies}></Row>
-      <Row title="Documentaries" fetchURL={requests.fetchDocumentaries}></Row>
+      <Router>
+        {!user ? (
+          <Login />
+        ) : (
+          <Routes>
+            <Route path="/" element={<HomeScreen />} />
+            <Route path='/profile' element={<ProfileScreen/>}/>
+          </Routes>
+        )}
+      </Router>
     </div>
   );
 }
